@@ -10,7 +10,7 @@ export default function BottomIcons({ icons }: { icons: Icon[] }) {
     const [selected, setSelected] = useState<string | null>(null);
 
     return (
-        <div className="flex flex-wrap items-center justify-center gap-x-3 md:gap-0">
+        <div className="flex flex-wrap items-center justify-center gap-x-16 md:gap-0">
             {icons.map((icon, i) => {
                 const isSelected = selected === icon.id;
                 return (
