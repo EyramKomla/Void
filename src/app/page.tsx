@@ -28,7 +28,7 @@ export default function WarningPage() {
             />
 
             <div className="relative flex w-full max-w-[958px] flex-col md:min-h-[575px] md:flex-row">
-                <section className="flex items-center justify-center rounded-2xl border border-white bg-[#1d7499] p-6 md:w-[42.6%] md:shrink-0">
+                <section className="flex items-center justify-center md:rounded-2xl border border-white bg-[#1d7499] p-6 md:w-[42.6%] md:shrink-0">
                     <Image
                         src={globe}
                         alt="Void Dreams globe"
@@ -38,7 +38,7 @@ export default function WarningPage() {
                     />
                 </section>
 
-                <section className="flex flex-1 flex-col items-center justify-center rounded-2xl border border-[#d9d9d9] bg-[#1d7499] px-6 py-12 text-center md:py-16">
+                <section className="flex flex-1 flex-col items-center justify-center md:rounded-2xl border border-[#d9d9d9] bg-[#1d7499] px-6 py-12 text-center md:py-16">
                     <h1 className="text-[2.25rem] leading-[1.2] md:text-[2.8125rem]">WARNING</h1>
 
                     <div className="mt-8 max-w-[301px] space-y-[1.2em] text-sm leading-[1.2] tracking-[-0.05em] md:mt-[38px]">

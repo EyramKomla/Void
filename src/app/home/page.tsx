@@ -6,7 +6,7 @@ import asterisk from "@/assets/images/asterisk.png";
 import pipeline from "@/assets/images/pipeline-mark.png";
 import voidDvd from "@/assets/images/void-dvd.png";
 import joinIcons from "@/assets/images/join-icons.svg";
-import topMark from "@/assets/images/top-mark.svg";
+import AsteriskNav from "@/components/AsteriskNav";
 import BottomIcons from "./_components/BottomIcons";
 
 export const metadata: Metadata = {
@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 };
 
 const icons = [
-    { id: "pipeline", label: "Pipeline Comm", src: pipeline, size: 153, dim: true },
-    { id: "dvd", label: "Void DVD", src: voidDvd, size: 220 },
+    { id: "pipeline", label: "Pipeline Comm", src: pipeline, size: 120, dim: true },
+    { id: "dvd", label: "Void DVD", src: voidDvd, size: 120 },
     { id: "asterisk", label: "Asterisk", src: asterisk, size: 120, dim: true },
 ];
 
@@ -29,22 +29,18 @@ export default function HomePage() {
                 <Image src={background} alt="" fill preload sizes="100vw" className="object-cover" />
             </div>
 
-            <Image
-                src={topMark}
-                alt="Void Dreams"
-                width={122}
-                height={114}
-                className="relative mt-[75px] w-[122px] opacity-60 drop-shadow-[0_4px_9px_rgba(0,0,0,0.25)]"
-            />
+            <div className="mx-auto mb-25 min-h-24 bg-black rounded-b-full relative p-4 flex justify-center items-center">
+                <AsteriskNav size={300} />
+            </div>
 
             <h1
                 data-text="Culture Moves When We Move"
-                className="glitch font-jane-austen relative mt-16 max-w-[998px] text-center text-[2.5rem] leading-[1.15] sm:text-[4rem] md:mt-[140px]"
+                className="glitch font-jane-austen relative mt-16 mb-25 max-w-[998px] text-center text-[2.5rem] leading-[1.15] sm:text-[4rem] md:mt-[140px]"
             >
                 Culture Moves When We Move
             </h1>
 
-            <div className="relative mt-16 md:mt-[170px]">
+            <div className="relative mx-auto mt-16 md:mt-[170px]">
                 <BottomIcons icons={icons} />
             </div>
 

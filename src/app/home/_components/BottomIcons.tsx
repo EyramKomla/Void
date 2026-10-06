@@ -10,7 +10,7 @@ export default function BottomIcons({ icons }: { icons: Icon[] }) {
     const [selected, setSelected] = useState<string | null>(null);
 
     return (
-        <div className="flex flex-wrap items-center justify-center gap-6 md:gap-0">
+        <div className="flex flex-wrap items-center justify-center gap-x-3 md:gap-0">
             {icons.map((icon, i) => {
                 const isSelected = selected === icon.id;
                 return (
@@ -22,9 +22,8 @@ export default function BottomIcons({ icons }: { icons: Icon[] }) {
                         onClick={() => setSelected(icon.id)}
                         animate={{ scale: isSelected ? 1.15 : 1 }}
                         transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                        className={`shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white ${
-                            i === 1 ? "z-10 md:-mx-3" : ""
-                        }`}
+                        className={`shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white ${i === 1 ? "z-10 md:-mx-3" : ""
+                            }`}
                         style={{ opacity: icon.dim && !isSelected ? 0.45 : 1 }}
                     >
                         <Image
@@ -32,7 +31,7 @@ export default function BottomIcons({ icons }: { icons: Icon[] }) {
                             alt=""
                             width={icon.size}
                             height={icon.size}
-                            className="max-w-[40vw]"
+                            className="max-w-30"
                         />
                     </motion.button>
                 );
