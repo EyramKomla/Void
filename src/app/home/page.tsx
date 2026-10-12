@@ -6,7 +6,7 @@ import asterisk from "@/assets/images/asterisk.png";
 import pipeline from "@/assets/images/pipeline-mark.png";
 import voidDvd from "@/assets/images/void-dvd.png";
 import joinIcons from "@/assets/images/join-icons.svg";
-import AsteriskNav from "@/components/AsteriskNav";
+import logo from "@/assets/images/Vector.svg"
 import BottomIcons from "./_components/BottomIcons";
 
 export const metadata: Metadata = {
@@ -24,33 +24,37 @@ const linkClass = "block hover:opacity-100 focus-visible:outline-2 focus-visible
 
 export default function HomePage() {
     return (
-        <main className="w-full font-syne-mono relative flex min-h-dvh flex-1 flex-col items-center overflow-hidden bg-black px-0 pb-0 text-white">
+        <main className="w-full font-syne-mono relative min-h-dvh overflow-hidden bg-black px-0 pb-0 text-white">
             <div className="absolute inset-x-0 top-0 h-[1024px] opacity-80">
                 <Image src={background} alt="" fill preload sizes="100vw" className="object-cover" />
             </div>
 
-            <div className="mx-auto mb-25 min-h-24 bg-black rounded-b-full relative p-4 flex justify-center items-center">
-                <AsteriskNav size={300} />
+            <div className="w-full relative h-dvh pt-4 flex flex-col items-center justify-between pb-6">
+                <div className="mx-auto mb-25 rounded-b-full relative p-4 flex justify-center items-center">
+                    <Image src={logo} alt="Void Logo" sizes="40vw" />
+                </div>
+
+                <h1
+                    data-text="Culture Moves When We Move"
+                    className="glitch font-jane-austen relative mb-25 max-w-[998px] text-center text-[2.5rem] leading-[1.15] sm:text-[4rem]"
+                >
+                    Culture Moves When We Move
+                </h1>
+
+                <div className="relative mx-auto">
+                    <BottomIcons icons={icons} />
+                </div>
             </div>
 
-            <h1
-                data-text="Culture Moves When We Move"
-                className="glitch font-jane-austen relative mt-16 mb-25 max-w-[998px] text-center text-[2.5rem] leading-[1.15] sm:text-[4rem] md:mt-[140px]"
-            >
-                Culture Moves When We Move
-            </h1>
 
-            <div className="relative mx-auto mt-16 md:mt-[170px]">
-                <BottomIcons icons={icons} />
-            </div>
-
-            <div className="p-8 bg-black relative mt-16 flex w-full flex-col items-center gap-10 md:mt-[111px] md:flex-row md:items-start md:justify-between">
+            <div className="p-8 bg-black relative mt-0 flex w-full flex-col items-center gap-10 md:flex-row md:items-start md:justify-between">
                 <div className="space-y-1 text-center md:text-left">
                     <p className="text-base tracking-[-0.04em]">Information</p>
                     <ul className="text-sm leading-[1.2] tracking-[-0.05em] opacity-50">
                         <li><Link href="#" className={linkClass}>On Demand</Link></li>
                         <li><Link href="#" className={linkClass}>Terms &amp; Conditions</Link></li>
                         <li><Link href="#" className={linkClass}>Privacy Policy</Link></li>
+                        <li><Link href="/community" className={linkClass}>Community</Link></li>
                     </ul>
                 </div>
 

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Syne_Mono } from "next/font/google";
-import background from "@/assets/images/VS Backgrounds 1.jpg";
+import background from "@/assets/images/home-bg.png";
 import globe from "@/assets/images/globe.png";
 
 const syneMono = Syne_Mono({ weight: "400", subsets: ["latin"] });

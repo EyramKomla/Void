@@ -10,6 +10,7 @@ import discord from "@/assets/images/community/discord.svg";
 import vector from "@/assets/images/community/comm-vector.svg";
 import Footer from "./_components/Footer";
 
+
 export const metadata: Metadata = {
     title: "Community | Void Dreams",
     description: "Seek asylum. Join the Void Dreams community.",
@@ -18,16 +19,16 @@ export const metadata: Metadata = {
 const navLinks = ["Gallery", "Blog", "Opportunities"];
 const fields = ["ALTER EGO", "WYA", "WORK"];
 
-const buttonClass =
-    "h-[38px] cursor-pointer rounded-[4px] bg-[#D9D9D9] text-[22px] tracking-[-0.1em] text-black shadow-[inset_3px_2px_4px_rgba(0,0,0,0.25),-1px_1px_2px_rgba(87,87,87,0.95),0_-1px_2px_#fff]";
-
 export default function CommunityPage() {
+
     return (
         <main className="font-syne-mono relative flex min-h-dvh w-full text-[20px] flex-1 flex-col items-center overflow-hidden bg-[#060000] text-white">
             <div className="absolute inset-x-0 top-0 h-162.5">
-                <Image src={heroBg} alt="" fill preload sizes="100vw" className="object-cover" />
+                <Image src={heroBg} alt="seek asylum" fill preload sizes="100vw" className="object-cover" />
                 <div className="absolute inset-0 bg-black/40" />
             </div>
+
+
 
             <Image
                 src={texture}
@@ -44,7 +45,11 @@ export default function CommunityPage() {
                 ))}
             </nav>
 
-            <Image src={vector} alt="" aria-hidden className="pointer-events-none absolute top-[818px] right-[62px] hidden md:block" />
+            <Link href="/home">
+                <Image src={vector} alt="" aria-hidden className="max-md:w-20 fixed bottom-8 right-2 max-md:top-8 z-1000" />
+            </Link>
+
+
 
             <section className="relative top-20 mt-16 flex w-full flex-col gap-y-16 items-center px-4 md:mt-[100px]">
                 <h1 className="font-spray-letters text-center text-[4rem] leading-none tracking-[-0.05em] sm:text-[6rem] md:text-[8rem]">
@@ -66,11 +71,13 @@ We are here to ignite a creative revolution. To empower, uplift, and inspire a g
 Void Dreams exists to uplift, to challenge, and to create space for people to dream freely and build boldly.`}
             </p>
 
-            <section className="relative mt-24 flex w-full flex-col items-center px-4 md:mt-[80px]">
-                <h2 className="text-center text-5xl tracking-[-0.05em] md:text-[60px]">REBELZ ID</h2>
-                <p className="mt-1 text-xl tracking-[-0.05em] text-[#AAAAAA]">ID GENERATOR</p>
+            <section className="gap-15 relative mt-24 flex w-full flex-col items-center px-4 md:mt-[80px]">
+                <div className="relative top-10 flex flex-col items-center justify-center">
+                    <h2 className="text-center text-5xl tracking-[-0.05em] md:text-[60px]">REBELZ ID</h2>
+                    <p className="text-xl tracking-[-0.05em] text-[#AAAAAA]">ID GENERATOR</p>
+                </div>
 
-                <div className="mt-12 flex w-full max-w-[1100px] flex-col items-center gap-10 md:flex-row md:justify-center md:gap-4">
+                <div className="flex w-full max-w-[1100px] flex-col items-center gap-10 md:flex-row md:justify-center md:gap-4">
                     <figure className="flex w-full max-w-[488px] flex-col items-center">
                         <Image src={idFront} alt="Rebelz ID, front" className="h-auto w-full" />
                         <figcaption className="-mt-10 text-xl tracking-[-0.05em]">FRONT</figcaption>
@@ -81,7 +88,7 @@ Void Dreams exists to uplift, to challenge, and to create space for people to dr
                     </figure>
                 </div>
 
-                <div className="mt-12 flex w-full max-w-[562px] flex-col gap-[70px]">
+                <div className="flex w-full max-w-[562px] flex-col gap-[70px]">
                     {fields.map((label) => (
                         <input
                             key={label}
@@ -95,20 +102,21 @@ Void Dreams exists to uplift, to challenge, and to create space for people to dr
 
                 <div
                     role="presentation"
-                    className="mt-24 flex h-[241px] w-[263px] items-center justify-center rounded-[5px] bg-[#D9D9D9] px-14 text-center text-[15px] leading-[1.2] tracking-[-0.04em] text-[#160000] shadow-[inset_-5px_3px_2px_rgba(0,0,0,0.3)]"
+                    className="flex h-[241px] w-[263px] items-center justify-center rounded-[5px] bg-[#D9D9D9] px-14 text-center text-[15px] leading-[1.2] tracking-[-0.04em] text-[#160000] shadow-[inset_-5px_3px_2px_rgba(0,0,0,0.3)]"
                 >
                     Drag your image here
                     <br />
                     or click to browse
                 </div>
 
-                <button type="button" className={`button3d mt-14 w-[176px]`}>
+                <p className="max-w-[613px] px-2 text-center text-xl leading-[1.2] tracking-[-0.04em]">
+                    This ID is not a marketing campaign aimed at getting random people into our community. This ID is an important part of the Void Dreams world reserved for people who resonate with our mission and those who want to participate in the growth of the community long term.
+                </p>
+
+                <button type="button" className={`button3d h-10 w-[176px] md:relative md:bottom-5`}>
                     GENERATE
                 </button>
 
-                <p className="mt-16 max-w-[613px] px-2 text-center text-xl leading-[1.2] tracking-[-0.04em]">
-                    This ID is not a marketing campaign aimed at getting random people into our community. This ID is an important part of the Void Dreams world reserved for people who resonate with our mission and those who want to participate in the growth of the community long term.
-                </p>
             </section>
 
             <Footer />

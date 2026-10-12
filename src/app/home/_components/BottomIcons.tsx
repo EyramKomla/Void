@@ -8,20 +8,33 @@ type Icon = { id: string; label: string; src: StaticImageData; size: number; dim
 
 export default function BottomIcons({ icons }: { icons: Icon[] }) {
     const [selected, setSelected] = useState<string | null>(null);
+    const [order, setOrder] = useState(icons);
+
+    const select = (index: number, id: string) => {
+        const n = order.length;
+        const mid = Math.floor(n / 2);
+        const shifts = (index - mid + n) % n;
+        setOrder([...order.slice(shifts), ...order.slice(0, shifts)]);
+        setSelected(id);
+    };
 
     return (
-        <div className="flex flex-wrap items-center justify-center gap-x-16 md:gap-0">
-            {icons.map((icon, i) => {
+        <div className="flex flex-wrap items-center justify-center gap-x-5 md:gap-10 w-full">
+            {order.map((icon, i) => {
                 const isSelected = selected === icon.id;
                 return (
                     <motion.button
                         key={icon.id}
+                        layout
                         type="button"
                         aria-label={icon.label}
                         aria-pressed={isSelected}
-                        onClick={() => setSelected(icon.id)}
+                        onClick={() => select(i, icon.id)}
                         animate={{ scale: isSelected ? 1.15 : 1 }}
-                        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        transition={{
+                            scale: { type: "spring", stiffness: 300, damping: 20 },
+                            layout: { type: "spring", stiffness: 260, damping: 28 },
+                        }}
                         className={`shrink-0 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white ${i === 1 ? "z-10 md:-mx-3" : ""
                             }`}
                         style={{ opacity: icon.dim && !isSelected ? 0.45 : 1 }}
@@ -31,7 +44,7 @@ export default function BottomIcons({ icons }: { icons: Icon[] }) {
                             alt=""
                             width={icon.size}
                             height={icon.size}
-                            className="max-w-30"
+                            className="w-30 max-md:w-25"
                         />
                     </motion.button>
                 );
