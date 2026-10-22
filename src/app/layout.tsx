@@ -4,10 +4,9 @@ import { Syne_Mono } from "next/font/google";
 
 import "./globals.css";
 
-const syneMono = Syne_Mono({
+const syneMono = localFont({
+  src: "../assets/fonts/Syne_Mono/SyneMono-Regular.ttf",
   variable: "--font-syne-mono",
-  subsets: ["latin"],
-  weight: "400",
 });
 
 const janeAusten = localFont({

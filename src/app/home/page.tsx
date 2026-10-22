@@ -5,9 +5,12 @@ import background from "@/assets/images/home-bg.png";
 import asterisk from "@/assets/images/asterisk.png";
 import pipeline from "@/assets/images/pipeline-mark.png";
 import voidDvd from "@/assets/images/void-dvd.png";
-import joinIcons from "@/assets/images/join-icons.svg";
 import logo from "@/assets/images/Vector.svg"
 import BottomIcons from "./_components/BottomIcons";
+import ig from "@/assets/images/ig.svg";
+import discordh from "@/assets/images/discordh.svg"
+import twitter from "@/assets/images/twitter.svg";
+import Socials from "@/components/Socials";
 
 export const metadata: Metadata = {
     title: "Home | Void Dreams",
@@ -15,7 +18,7 @@ export const metadata: Metadata = {
 };
 
 const icons = [
-    { id: "pipeline", label: "Pipeline Comm", src: pipeline, size: 120, dim: true },
+    { id: "community", label: "community", src: pipeline, size: 120, dim: true, href: "/community" },
     { id: "dvd", label: "Void DVD", src: voidDvd, size: 120 },
     { id: "asterisk", label: "Asterisk", src: asterisk, size: 120, dim: true },
 ];
@@ -60,7 +63,7 @@ export default function HomePage() {
 
                 <div className="order-first flex w-[200px] flex-col items-center md:order-none">
                     <span className="text-[1.375rem] tracking-[-0.04em]">JOIN US</span>
-                    <Image src={joinIcons} alt="" width={144} height={48} className="mt-[5px]" />
+                    <Socials />
                     <p className="mt-[6px] text-[0.9375rem] tracking-[-0.04em] opacity-40">
                         Copyright Void Dreams 2019
                     </p>
@@ -72,6 +75,7 @@ export default function HomePage() {
                         <li><Link href="#" className={linkClass}>On Demand</Link></li>
                         <li><Link href="#" className={linkClass}>Terms &amp; Conditions</Link></li>
                         <li><Link href="#" className={linkClass}>Privacy Policy</Link></li>
+                        <li><Link href="/experimental-college" className={linkClass}>Experimental College</Link></li>
                     </ul>
                 </div>
             </div>

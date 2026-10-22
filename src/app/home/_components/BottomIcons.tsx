@@ -2,11 +2,13 @@
 
 import { useState } from "react";
 import Image, { type StaticImageData } from "next/image";
+import { useRouter } from "next/navigation";
 import { motion } from "motion/react";
 
-type Icon = { id: string; label: string; src: StaticImageData; size: number; dim?: boolean };
+type Icon = { id: string; label: string; src: StaticImageData; size: number; dim?: boolean; href?: string };
 
 export default function BottomIcons({ icons }: { icons: Icon[] }) {
+    const router = useRouter();
     const [selected, setSelected] = useState<string | null>(null);
     const [order, setOrder] = useState(icons);
 
@@ -29,7 +31,11 @@ export default function BottomIcons({ icons }: { icons: Icon[] }) {
                         type="button"
                         aria-label={icon.label}
                         aria-pressed={isSelected}
-                        onClick={() => select(i, icon.id)}
+                        onClick={() => {
+                            select(i, icon.id);
+                            const href = icon.href;
+                            if (href) setTimeout(() => router.push(href), 600);
+                        }}
                         animate={{ scale: isSelected ? 1.15 : 1 }}
                         transition={{
                             scale: { type: "spring", stiffness: 300, damping: 20 },

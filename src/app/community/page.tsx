@@ -8,7 +8,7 @@ import idFront from "@/assets/images/community/id-front.png";
 import idBack from "@/assets/images/community/id-back.png";
 import discord from "@/assets/images/community/discord.svg";
 import vector from "@/assets/images/community/comm-vector.svg";
-import Footer from "./_components/Footer";
+import Footer from "@/components/Footer";
 
 
 export const metadata: Metadata = {
@@ -55,9 +55,9 @@ export default function CommunityPage() {
                 <h1 className="font-spray-letters text-center text-[4rem] leading-none tracking-[-0.05em] sm:text-[6rem] md:text-[8rem]">
                     SEEK ASYLUM
                 </h1>
-                <Link href="#" aria-label="Join our Discord" className="block focus-visible:outline-2 focus-visible:outline-white md:mt-16">
+                <a href="https://discord.gg/2qDaP66btQ" target="_blank" rel="noopener noreferrer" aria-label="Join our Discord" className="block focus-visible:outline-2 focus-visible:outline-white md:mt-16">
                     <Image src={discord} alt="" width={96} height={94} />
-                </Link>
+                </a>
                 <Image src={emblem} alt="" aria-hidden width={674} height={674} className="mt-4 h-auto w-full max-w-[674px]" />
             </section>
 

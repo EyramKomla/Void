@@ -16,7 +16,7 @@ export type AsteriskNavItem = { label: string | React.ReactNode; href: string, i
 export const defaultNavItems: AsteriskNavItem[] = [
     { label: "All Access DvD", href: "#", idx: 5 },
     { label: "Community Page", href: "/community", idx: 1 },
-    { label: <p>Experimental <br /> College</p>, href: "#", idx: 2 },
+    { label: <p>Experimental <br /> College</p>, href: "/experimental-college", idx: 2 },
     { label: "On Demand", href: "#", idx: 3 },
     { label: "Archive", href: "#", idx: 4 },
 ];

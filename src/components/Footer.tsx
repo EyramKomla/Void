@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import footerArt from "@/assets/images/community/comm-footer-art.svg";
-import joinIcons from "@/assets/images/join-icons.svg";
+import Socials from "./Socials";
 
 const linkClass = "block hover:opacity-100 focus-visible:outline-2 focus-visible:outline-white";
 
@@ -38,9 +38,9 @@ export default function Footer() {
 
 
                 <div className="flex flex-col items-center gap-6 md:items-end flex-1">
-                    <div className="flex flex-col items-center md:items-start">
-                        <span className="text-[1.375rem] tracking-[-0.04em] md:pl-2">JOIN US</span>
-                        <Image src={joinIcons} alt="" width={143} height={48} className="mt-[5px]" />
+                    <div className="flex flex-col items-center md:items-start w-[135px]">
+                        <span className="text-[1.375rem] tracking-[-0.04em] md:pl-0">JOIN US</span>
+                        <Socials />
                     </div>
                     <div className="space-y-1 w-[143px] md:pl-2 text-center md:text-left">
                         <p className="text-base tracking-[-0.04em]">Contacts</p>
